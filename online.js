@@ -1,7 +1,14 @@
 function whoIsOnline(users) {
   let usersOnline = [];
   // Happy Coding! Puedes modificar solo el cuerpo de esta función
-  users.forEach(element => element.status === "online" ? usersOnline.push(element.username) : null);
+
+  // con forEach e if
+  // users.forEach(element => element.status === "online" ? usersOnline.push(element.username) : null);
+
+  // combinando filter y map
+  usersOnline = users
+    .filter(user => user.status === "online")
+    .map(user => user.username);
 
   return usersOnline;
 }
